@@ -1,4 +1,4 @@
-var stack = function() {
+export var stack = function() {
     var top;
     var data;
     var size;
@@ -15,7 +15,7 @@ var stack = function() {
 
     stack.prototype.print = () => {
         var output = "";
-       for(i = 0; i<=this.top; i++) {
+       for(var i = 0; i<=this.top; i++) {
            output += ` |  ${this.data[i]}  |  `
        }
        console.log(output);
@@ -25,7 +25,7 @@ var stack = function() {
         if(this.isEmpty()) {
             console.log('Empty!!!')
         }
-        else console.log(this.data[this.top]);
+        else return this.data[this.top];
     }
 
     stack.prototype.pop = () => {
@@ -34,7 +34,7 @@ var stack = function() {
             console.log('Empty!!!');
             return;
         }
-        else console.log(this.data[this.top--]);
+        else return this.data[this.top--];
     }
     
     stack.prototype.isEmpty = () => {
@@ -46,7 +46,7 @@ var stack = function() {
     }
 }
 
-function NewStack(size) {
+export function NewStack(size) {
     var s = new stack();
     s.top = -1;
     s.data = new Array();
