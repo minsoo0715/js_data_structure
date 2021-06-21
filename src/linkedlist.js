@@ -21,7 +21,6 @@ var LinkedList = function() {
 
 
     LinkedList.prototype.append = function(newNode, p) {
-        
         if(this.head === null) {
           this.head = newNode;
         }else if(p === undefined || p === null ) {
@@ -41,7 +40,7 @@ var LinkedList = function() {
               this.head = newNode;
           }
          else {
-          for(i = 0; i<p-1; i++) {
+          for(var i = 0; i<p-1; i++) {
             temp = temp.next;
           }
           temp2 = temp.next;
@@ -58,8 +57,6 @@ var LinkedList = function() {
         else {
           var temp = new Node();
           temp = this.head;
-
-
         }
     }
 }
@@ -71,6 +68,6 @@ list.append(new Node(3))
 list.append(new Node(4))
 list.append(new Node(5))
 list.append(new Node(6))
-list.append(new Node(0), 0);
+list.append(new Node(0), 1);
 list.print()
 
